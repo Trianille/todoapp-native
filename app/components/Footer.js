@@ -8,23 +8,33 @@ import {
 } from 'react-native';
 
 import FilterLink from '../containers/FilterLink'
-import { VisibilityFilters } from '../actions'
+import * as filterType from '../constants/TodoFilters'
 
 export default class Footer extends Component {
 	render() {
 		return (
-			<View>
-				<FilterLink filter={VisibilityFilters.SHOW_ALL}>
+			<View
+			style={{flex: 1, flexDirection: 'row', justifyContent: 'space-between'}}
+			>
+				<FilterLink
+				filter={filterType.SHOW_ALL}
+				>
 					All
 				</FilterLink>
-				<FilterLink filter={VisibilityFilters.SHOW_NORMAL}>
+				<FilterLink
+				filter={filterType.SHOW_NORMAL}
+				>
 					normal
 				</FilterLink>
-				<FilterLink filter={VisibilityFilters.SHOW_URGENT}>
-					urgent
+				<FilterLink
+				filter={filterType.SHOW_IMPORTANT}
+				>
+					important
 				</FilterLink>
-				<FilterLink filter={VisibilityFilters.SHOW_SUPERURGENT}>
-					SUPERURGENT
+				<FilterLink
+				filter={filterType.SHOW_CRITICAL}
+				>
+					critical
 				</FilterLink>
 			</View>
 		);

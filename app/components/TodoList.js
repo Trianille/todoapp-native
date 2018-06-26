@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {
-	AppRegistry, 
-	ScrollView, 
-	StyleSheet, 
-	Text, 
+	AppRegistry,
+	ScrollView,
+	StyleSheet,
+	Text,
 	View
 } from 'react-native';
 
@@ -16,9 +16,12 @@ const TodoList = ({ todos, actions }) => (
 			<Todo
 				key={todo.id}
 				{...todo}
-				toggleTodo={() => actions.toggleTodo(todo.id)}
+				completeTodo={() => actions.completeTodo(todo.id)}
 				deleteTodo={() => actions.deleteTodo(todo.id)}
-				editTodo={() => actions.editTodo(todo)}
+				editTodo={() => {
+					actions.editTodo(todo);
+					actions.showModal();
+				}}
 			/>
 		)}
 	</ScrollView>

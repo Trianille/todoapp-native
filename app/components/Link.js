@@ -14,9 +14,6 @@ const Link = ({ active, children, onClick }) => (
     <Button
        onPress={onClick}
        disabled={active}
-       style={{
-           marginLeft: '4px',
-       }}
 	   title={children}
     />
 )

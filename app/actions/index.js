@@ -1,7 +1,10 @@
+import * as types from '../constants/ActionTypes'
+import * as modal from '../constants/ToggleModal'
+
 let nextTodoId = 0;
 
 export const addTodo = (head, body, importance, timeStarts, timeEnds) => ({
-	type: 'ADD_TODO',
+	type: types.ADD_TODO,
 	id: nextTodoId++,
 	head,
 	body,
@@ -13,29 +16,37 @@ export const addTodo = (head, body, importance, timeStarts, timeEnds) => ({
 	completed: false
 })
 
-export const editTodo = (todo) => ({
-	type: 'EDIT_TODO',
-	todo
+export const editTodo = todo => ({
+	type: types.EDIT_TODO,
+	payload: {head: todo.head, body: todo.body, importance: todo.importance}
 })
 
-export const deleteTodo = (id) => ({
-    type: 'DELETE_TODO',
+export const deleteTodo = id => ({
+    type: types.DELETE_TODO,
     id
 })
 
 export const setVisibilityFilter = filter => ({
-	type: 'SET_VISIBILITY_FILTER',
+	type: types.SET_VISIBILITY_FILTER,
 	filter
 })
 
-export const toggleTodo = id => ({
-	type: 'TOGGLE_TODO',
+export const completeTodo = id => ({
+	type: types.COMPLETE_TODO,
 	id
 })
 
-export const VisibilityFilters = {
-	SHOW_ALL: 'SHOW_ALL',
-	SHOW_NORMAL: 'SHOW_NORMAL',
-	SHOW_URGENT: 'SHOW_URGENT',
-	SHOW_SUPERURGENT: 'SHOW_SUPERURGENT'
-}
+export const expiredTodo = id => ({
+	type: types.EXPIRED_TODO,
+	id
+})
+
+export const showModal = () => ({
+	type: modal.SHOW_MODAL,
+	isOpen: true
+})
+
+export const hideModal = () => ({
+	type: modal.HIDE_MODAL,
+	isOpen: false
+})

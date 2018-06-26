@@ -7,19 +7,33 @@ import {
 	TouchableOpacity
 } from 'react-native';
 
-import AddTodo from './AddTodo'
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux'
 
-const Header = () => {
+import TodoModal from '../containers/TodoModal'
+import { showModal, hideModal } from '../actions'
+
+const Header = ({ dispatch, open, data }) => {
 	return (
 		<View style={{padding: 10}}>
 			<View style={{padding: 10}}>
-				<Text>
-					Todoapp!
-				</Text>
+				<Button
+					style={{height: 40}}
+					title="To add todo!"
+					color="#841584"
+					onPress={() => {
+						dispatch(showModal())
+					}}
+				/>
+				<TodoModal data isOpen={open} onClose={() => dispatch(hideModal())} />
 			</View>
-			<AddTodo/>
 		</View>
 	)
 }
 
-export default Header
+const mapStateToProps = state => ({
+  open: state.modal.isOpen,
+	data: state.temp
+})
+
+export default connect(mapStateToProps)(Header)

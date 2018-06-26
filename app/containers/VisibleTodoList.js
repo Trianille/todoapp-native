@@ -9,19 +9,20 @@ import {
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
 
-import * as TodoActions from '../actions'
+import * as filterType from '../constants/TodoFilters'
 import TodoList from '../components/TodoList'
+import * as TodoActions from '../actions'
 
 const getVisibleTodos = (todos, filter) => {
 	switch (filter) {
-		case TodoActions.VisibilityFilters.SHOW_ALL:
+		case filterType.SHOW_ALL:
 			return todos
-		case TodoActions.VisibilityFilters.SHOW_NORMAL:
+		case filterType.SHOW_NORMAL:
 			return todos.filter(t => t.importance == 'normal')
-		case TodoActions.VisibilityFilters.SHOW_URGENT:
-			return todos.filter(t => t.importance == 'urgent')
-		case TodoActions.VisibilityFilters.SHOW_SUPERURGENT:
-			return todos.filter(t => t.importance == 'super-urgent')
+		case filterType.SHOW_IMPORTANT:
+			return todos.filter(t => t.importance == 'important')
+		case filterType.SHOW_CRITICAL:
+			return todos.filter(t => t.importance == 'critical')
 		default:
 			throw new Error('Unknown filter: ' + filter)
 	}

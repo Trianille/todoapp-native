@@ -1,9 +1,9 @@
 import React from 'react'
 import {
-	AppRegistry, 
-	ScrollView, 
-	StyleSheet, 
-	Text, 
+	AppRegistry,
+	ScrollView,
+	StyleSheet,
+	Text,
 	View,
 	TouchableOpacity,
 	Button
@@ -11,7 +11,7 @@ import {
 
 import PropTypes from 'prop-types'
 
-const Todo = ({ id, head, body, importance, timeStarts, timeEnds, completed, editTodo, deleteTodo, toggleTodo}) => {
+const Todo = ({ id, head, body, importance, timeStarts, timeEnds, completed, editTodo, deleteTodo, completeTodo}) => {
 	//timeStarts = timeStarts.toString();
 	//timeEnds = timeEnds.toString();
 	return (
@@ -30,9 +30,6 @@ const Todo = ({ id, head, body, importance, timeStarts, timeEnds, completed, edi
 					<Text>
 						{importance}
 					</Text>
-					<Text>
-						{timeStarts} - {timeEnds}
-					</Text>
 				</View>
 				<View>
 					<Text>
@@ -40,14 +37,16 @@ const Todo = ({ id, head, body, importance, timeStarts, timeEnds, completed, edi
 					</Text>
 				</View>
 			</TouchableOpacity>
-			<Button
-				style={{width: 40, height: 40}}
-				title="Push!"
-				color="#841584"
-				onPress={toggleTodo}
-			/>
+			<View>
+				<Button
+					style={{width: 40, height: 40}}
+					title="Completed?"
+					color="#841584"
+					onPress={completeTodo}
+				/>
+			</View>
 		</View>
-		
+
 	)
 }
 
