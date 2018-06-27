@@ -1,13 +1,6 @@
 Its a simple todo application created via framework React Native.
 Only for android! By now.
 
-## Table of Contents
-
-* [Scripts](scripts)
-* [Used packages](used-packages)
-* [Features](features)
-* [Screenshots](screenshots)
-
 ## Scripts
 To install run
 ```
