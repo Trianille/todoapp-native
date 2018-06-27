@@ -3,7 +3,7 @@ Only for android! By now.
 
 ## Table of Contents
 * [Scripts](Scripts)
-* [Used packages](Used packages:)
+* [Used packages](Used packages)
 * [Features](Features)
 * [Screenshots](Screenshots)
 ### Scripts
@@ -15,7 +15,7 @@ For testing run
 ```
 npm run android
 ```
-### Used packages:
+### Used packages
   expo - for hotreloading
   prop-types - typechecking
   React - base for react Native apps
@@ -35,3 +35,5 @@ npm run android
   Filter by marks (bottom buttons)
   Todo have: name, body, mark and you can make it timed (and choose date and time) or not
 ### Screenshots
+<img align="left" width="100" height="100" src="http://tinypic.com/r/24gpwg4/9">
+<img align="left" width="100" height="100" src="http://tinypic.com/r/bdnrdc/9">
