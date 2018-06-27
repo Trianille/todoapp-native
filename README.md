@@ -16,7 +16,7 @@ npm run android
   3. React - base for react Native apps
   4. react-Native - base for react Native apps
   5. react-redux - link between redux and react
-  6. redux - stage container
+  6. redux - state container
   7. redux-persist - storage
 
 ## Features
