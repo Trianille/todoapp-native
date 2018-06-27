@@ -37,5 +37,4 @@ npm run android
   8. Filter by marks (bottom buttons)
   9. Todo have: name, body, mark and you can make it timed (and choose date and time) or not
 ## Screenshots
-[scr1](screenshots/scr1.jpg)
-[scr2](screenshots/scr1.jpg)
+![scr1](screenshots/scr1.jpg) ![scr2](screenshots/scr1.jpg)
