@@ -1,17 +1,28 @@
-import { EDIT_TODO } from '../constants/ActionTypes'
+import {EDIT_TODO, CLEAR} from "../constants/ActionTypes";
 
 const initialState = {
-	head: '',
-	body: ''
+  id: null,
+  head: "",
+  body: ""
 };
 
 const temp = (state = initialState, action) => {
-	switch (action.type) {
-		case EDIT_TODO:
-      return action.payload
-		default:
-			return state
+  switch (action.type) {
+    case EDIT_TODO:
+      return {
+        id: action.id,
+        head: action.head,
+        body: action.body
+      };
+    case CLEAR:
+      return {
+        id: null,
+        head: "",
+        body: ""
+      };
+    default:
+      return state;
   }
-}
+};
 
-export default temp
+export default temp;
